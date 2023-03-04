@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useQuery, } from '@tanstack/react-query';
 import Loading from '../../components/Loading';
 import Button from '../../components/Button';
 import Categories from './CategorySection.js/Categories';
+import { categoryProduct } from '../../utilities/APIRoutes';
+import axios from 'axios';
+
 
 const Category = () => {
 
@@ -22,18 +25,22 @@ const Category = () => {
         }
     );
 
-    if (isLoading) {
+    const handleCategory = async (id) => {
+        await axios.get(`${categoryProduct}/${id}`).then((result) => {
+            setCategoryData(result.data);
+        }).catch(err => console.error('error'));
+    };
+
+    useEffect(() => {
+        handleCategory('01');
+    }, []);
+
+
+
+    if (isLoading || !categoryData.length) {
         return <Loading />;
     }
 
-    const handleCategory = (id) => {
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => {
-                const filter = data.filter(d => d.category_id === id);
-                setCategoryData(filter);
-            });
-    };
 
 
 
