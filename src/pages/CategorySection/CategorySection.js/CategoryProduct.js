@@ -1,14 +1,17 @@
 import React from 'react';
+import BookModal from '../../BookModal/BookModal';
 
-const Categories = ({ category }) => {
-    console.log(category);
+const CategoryProduct = ({ product, setProduct }) => {
 
-    const { modelName, number, originalPrice, puchesYear, location, desc, resalePrice, sellerName, uses } = category;
+    // setCategoryID(category.category_id
+    // );
+
+    const { modelName, number, originalPrice, puchesYear, location, desc, resalePrice, sellerName, uses } = product;
     return (
 
-        <div class="  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="  bg-white border border-gray-200 rounded-lg shadow ">
             <div className='h-72' >
-                <img className="p-4 rounded-t-lg h-full w-full" height={30} src={category.img} alt='' />
+                <img className="p-4 rounded-t-lg h-full w-full" height={30} src={product.img} alt='' />
             </div>
             <div class="px-5 pb-5">
                 <div href="#">
@@ -27,11 +30,17 @@ const Categories = ({ category }) => {
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-3xl font-bold text-gray-900 dark:text-white">${resalePrice}</span>
-                    <div href="#" class="text-white bg-secondary hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</div>
+                    <label
+                        htmlFor="booking-modal"
+                        className=""
+                        onClick={() => setProduct(product)}
+                    >
+                        <div href="#" class="text-white bg-secondary hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center "> Book Now</div></label>
                 </div>
             </div>
+
         </div>
     );
 };
 
-export default Categories;
+export default CategoryProduct;

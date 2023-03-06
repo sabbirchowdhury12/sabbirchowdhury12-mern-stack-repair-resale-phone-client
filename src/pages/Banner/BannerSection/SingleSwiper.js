@@ -2,7 +2,7 @@ import React from 'react';
 
 const SingleSwiper = ({ slide }) => {
     return (
-        <div className='carousel-item relative w-full h-full'>
+        <div className=' carousel-item relative w-full h-full'>
             <div
                 className='hero h-[90vh]'
                 style={{ backgroundImage: `url(${slide.img})`, }}

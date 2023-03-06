@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
+import { CgProfile } from 'react-icons/cg';
 
 
 
@@ -11,29 +13,36 @@ const menu = [
     },
 
     {
-        name: 'Home',
+        name: 'About',
         link: '/home'
     },
     {
-        name: 'Home',
+        name: 'Blog',
         link: '/home'
     },
     {
-        name: 'Home',
+        name: 'Contact',
         link: '/home'
     },
-    {
-        name: 'Home',
-        link: '/home'
-    },
+    // {
+    //     name: 'Home',
+    //     link: '/home'
+    // },
 ];
 
 const MenuNavbar = () => {
     const [navbar, setNavbar] = useState(false);
+    const { user, logout } = useContext(AuthContext);
+    console.log(user);
+
+    const handleLogout = () => {
+        console.log("hi");
+        logout();
+    };
 
     return (
         <nav className="w-full bg-primary sm:mt-5 flex items-center justify-center text-white shadow">
-            <div className="justify-between px-4 md:px-0 container mx-auto md:items-center md:flex  z-10">
+            <div className="justify-between  container mx-auto md:items-center md:flex  z-10">
                 <div>
                     <div className="flex items-center justify-between   md:block">
                         <Link to='/'>
@@ -94,24 +103,32 @@ const MenuNavbar = () => {
                                     );
                                 })
                             }
-                            {/* {
+                            {
                                 user && user.uid &&
                                 <>
-                                    <NavLink to="/myreview" className={({ isActive }) =>
-                                        isActive ? "navStyle" : "navTextStyle"} ><span className='block mt-5 md:mt-0' >My Review</span></NavLink>
-                                    <NavLink to='/addService' className={({ isActive }) =>
-                                        isActive ? "navStyle" : "navTextStyle"} ><span className='block mt-5 md:mt-0'>Add Service</span></NavLink>
+                                    <NavLink to="/dashboard" className={({ isActive }) =>
+                                        isActive ? "navStyle" : "navTextStyle"} ><span className='block mt-5 md:mt-0' >DashBoard</span></NavLink>
+                                    {/* <NavLink to='/addService' className={({ isActive }) =>
+                                        isActive ? "navStyle" : "navTextStyle"} ><span className='block mt-5 md:mt-0'>Add Service</span></NavLink> */}
                                 </>
-                            } */}
+                            }
                         </ul>
                     </div>
                 </div>
-                <div className={`items-center text-lg my-4 md:my-0 justify-center space-y-4 md:flex md:space-x-6 md:space-y-0 pb-4  md:pb-0 font-bold hover:text-slate-400 ${navbar ? "block" : "hidden"
+                <div className={`items-center text-lg my-4 md:my-0 justify-center space-y-4 md:flex md:space-x-6 md:space-y-0 pb-4  md:pb-0 font-bold  ${navbar ? "block" : "hidden"
                     }`}>
 
 
-                    <Link to='/register'> <button>Login or Sign Up</button></Link>
-                    {/* <CgProfile size={30} /> */}
+                    {
+                        user?.uid ?
+                            <>
+                                <button onClick={handleLogout} className='hover:text-slate-400'>Log Out</button>
+                                <CgProfile size={30} />
+                            </>
+                            : <><Link to='/register'> <button className='hover:text-slate-400'>Login or Sign Up</button></Link>
+
+                                <CgProfile size={30} /> </>
+                    }
 
                 </div>
             </div>

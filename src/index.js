@@ -5,12 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
 
 
 // Create a client
@@ -18,12 +16,14 @@ const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <QueryClientProvider client={queryClient}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </QueryClientProvider>
+  <AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </QueryClientProvider>
 
+  </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

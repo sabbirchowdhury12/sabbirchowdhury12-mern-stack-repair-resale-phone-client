@@ -1,12 +1,15 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import Category from '../CategorySection/Category';
+import CategoryProducts from '../CategorySection/CategoryProducts';
+import Testomonial from './HomeSection/Testomonial/Testomonial';
+
 
 const Home = () => {
     return (
         <div>
             <Banner />
-            <Category />
+            <CategoryProducts />
+            <Testomonial />
         </div>
     );
 };

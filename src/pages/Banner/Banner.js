@@ -31,7 +31,7 @@ const slides = [
 
 function Banner() {
     return (
-        <div className='apps h-screen'>
+        <div className=''>
             <Swiper
                 pagination={{
                     type: "progressbar",

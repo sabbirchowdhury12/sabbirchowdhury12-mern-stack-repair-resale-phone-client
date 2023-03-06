@@ -22,7 +22,7 @@ const data = [
 
 const TopNavbar = () => {
     return (
-        <div className='  pt-10  sm:block hidden'>
+        <div className=' pt-10  sm:block hidden'>
             <div className='container mx-auto flex flex-col  lg:flex-row justify-between items-center gap-5'>
                 <div className='flex items-center justify-center gap-2'>
                     <GiVibratingSmartphone size={40} className='text-secondary' />

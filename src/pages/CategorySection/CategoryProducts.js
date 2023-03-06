@@ -3,15 +3,17 @@ import { Link, NavLink } from 'react-router-dom';
 import { useQuery, } from '@tanstack/react-query';
 import Loading from '../../components/Loading';
 import Button from '../../components/Button';
-import Categories from './CategorySection.js/Categories';
 import { categoryProduct } from '../../utilities/APIRoutes';
 import axios from 'axios';
+import CategoryProduct from './CategorySection.js/CategoryProduct';
 
 
-const Category = () => {
+const CategoryProducts = () => {
 
 
     const [categoryData, setCategoryData] = useState([]);
+    const [categoryID, setCategoryID] = useState('');
+
 
     const { data: categories = [], isLoading } = useQuery(
         {
@@ -42,10 +44,8 @@ const Category = () => {
     }
 
 
-
-
     return (
-        <div>
+        <div className='my-20'>
             <div className='flex justify-center gap-20'>
                 {
                     categories.map(category => {
@@ -59,13 +59,13 @@ const Category = () => {
             </div>
             <div className='my-10 mx-auto container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
-                    categoryData.map(category => <Categories category={category} />)
+                    categoryData.map(product => <CategoryProduct setCategoryID={setCategoryID} product={product} />)
                 }
             </div>
 
-            <Button>See All</Button>
+            <Button><Link to='/allProducts'>See All</Link></Button>
         </div>
     );
 };
 
-export default Category;
+export default CategoryProducts;
