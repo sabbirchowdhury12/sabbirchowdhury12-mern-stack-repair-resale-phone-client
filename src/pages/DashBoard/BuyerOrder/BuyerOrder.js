@@ -1,42 +1,27 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
-import Loading from '../../../components/Loading';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { productRoute } from '../../../utilities/APIRoutes';
+import { orderRoute } from '../../../utilities/APIRoutes';
 import { RiDeleteBinLine } from "react-icons/ri";
-import axios from 'axios';
-import { toast } from 'react-hot-toast';
 
-const SellerProducts = () => {
+const BuyerOrder = () => {
 
     const { user } = useContext(AuthContext);
 
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products', user?.email],
         queryFn: async () => {
-            const res = await fetch(`${productRoute}?email=${user?.email}`);
+            const res = await fetch(`${orderRoute}?email=${user?.email}`);
             const data = await res.json();
             return data;
         }
     });
 
-    if (isLoading) {
-        return <Loading />;
-    }
-
-    const handleDelete = async (id) => {
-        await axios.delete(`${productRoute}/${id}`).then(res => {
-            console.log(res);
-            if (res.data.acknowledged === true) {
-                console.log('success');
-                toast.success('add success');
-                refetch();
-            } else { toast.error('failed'); }
-
-        }).catch(err => console.log(err));
-    };
-
     console.log(products);
+
+    const handleDelete = (id) => {
+
+    };
     return (
         <div>
             {
@@ -75,7 +60,7 @@ const SellerProducts = () => {
                                                     scope="col"
                                                     className="px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
                                                 >
-                                                    sale status
+                                                    Payment
                                                 </th>
                                                 <th
                                                     scope="col"
@@ -96,17 +81,20 @@ const SellerProducts = () => {
                                                         {i + 1}
                                                     </td>
                                                     <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                                        {product.modelName}
+                                                        <div className='flex items-center justify- gap-2'>
+                                                            <img className='h-10 w-10 rounded-full' src={product.img} alt="" />
+                                                            <p>{product.modelName}</p>
+                                                        </div>
                                                     </td>
                                                     <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
                                                         {product.price}
                                                     </td>
                                                     <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
                                                         <button
-                                                            className="text-green-500 hover:text-green-700"
-                                                            href="#"
+                                                            className="bg-secondary text-white font-bold p-2 rounded hover:text-gray-600"
+
                                                         >
-                                                            {product.status ? 'sold' : 'available'}
+                                                            {product.status ? 'paid' : 'pay now'}
                                                         </button>
                                                     </td>
                                                     <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
@@ -132,4 +120,4 @@ const SellerProducts = () => {
     );
 };
 
-export default SellerProducts;
+export default BuyerOrder;

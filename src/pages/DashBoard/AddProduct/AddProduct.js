@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import date from '../../../components/date';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { add_Product } from '../../../utilities/APIRoutes';
+import { add_Product, productRoute } from '../../../utilities/APIRoutes';
 
 const inputStyle = 'mt-1 text-lg p-2  focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow  border-gray-300 rounded-md';
 
@@ -30,7 +30,7 @@ const AddProduct = () => {
             date: fulldate
         };
 
-        await axios.post(add_Product, {
+        await axios.post(productRoute, {
             product
         }).then(res => {
             if (res.data.acknowledged === true) {
