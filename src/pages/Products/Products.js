@@ -7,12 +7,11 @@ const Products = () => {
 
     const products = useLoaderData();
     const [product, setProduct] = useState(null);
-    console.log(products);
     return (
         <div>
             <div className=' my-10 mx-auto container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
-                    products.map(product => <CategoryProduct setProduct={setProduct} product={product} />)
+                    products.map(product => <CategoryProduct key={product._id} setProduct={setProduct} product={product} />)
                 }
             </div>
 

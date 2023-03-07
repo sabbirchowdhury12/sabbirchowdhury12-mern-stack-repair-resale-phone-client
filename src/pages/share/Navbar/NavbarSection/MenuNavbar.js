@@ -33,10 +33,8 @@ const menu = [
 const MenuNavbar = () => {
     const [navbar, setNavbar] = useState(false);
     const { user, logout } = useContext(AuthContext);
-    console.log(user);
 
     const handleLogout = () => {
-        console.log("hi");
         logout();
     };
 

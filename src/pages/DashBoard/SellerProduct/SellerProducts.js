@@ -26,9 +26,7 @@ const SellerProducts = () => {
 
     const handleDelete = async (id) => {
         await axios.delete(`${productRoute}/${id}`).then(res => {
-            console.log(res);
             if (res.data.acknowledged === true) {
-                console.log('success');
                 toast.success('add success');
                 refetch();
             } else { toast.error('failed'); }
@@ -36,7 +34,6 @@ const SellerProducts = () => {
         }).catch(err => console.log(err));
     };
 
-    console.log(products);
     return (
         <div>
             {

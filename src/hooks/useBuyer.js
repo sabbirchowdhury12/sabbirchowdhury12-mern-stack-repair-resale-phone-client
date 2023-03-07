@@ -10,7 +10,7 @@ const useBuyer = (email) => {
             fetch(`${userBuyerRoute}/${email}`)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     setIsBuyer(data.isBuyer);
                     setIsBuyerLoading(false);
                 });

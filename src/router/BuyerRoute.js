@@ -9,9 +9,6 @@ const BuyerRoute = ({ children }) => {
     const [isBuyer, isBuyerLoading] = useBuyer(user?.email);
     const location = useLocation();
 
-
-    console.log(isBuyer, isBuyerLoading);
-    console.log(loading);
     if (loading || isBuyerLoading) {
         return <Loading></Loading>;
     }

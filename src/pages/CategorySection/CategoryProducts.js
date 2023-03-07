@@ -48,18 +48,18 @@ const CategoryProducts = () => {
         <div className='my-20'>
             <div className='flex justify-center gap-20'>
                 {
-                    categories.map(category => {
-                        return <button onClick={() => handleCategory(category.category_id)}>
+                    categories.map((category, ind) => {
+                        return <label key={ind} onClick={() => handleCategory(category.category_id)}>
                             <Button>
                                 {category.category_name}
                             </Button>
-                        </button  >;
+                        </label  >;
                     })
                 }
             </div>
             <div className='my-10 mx-auto container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
-                    categoryData.map(product => <CategoryProduct setCategoryID={setCategoryID} product={product} />)
+                    categoryData.map(product => <CategoryProduct key={product._id} setCategoryID={setCategoryID} product={product} />)
                 }
             </div>
 

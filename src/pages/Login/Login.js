@@ -17,7 +17,7 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
                 toast.error('login succed');
                 navigate('/');
             }).catch(err => toast.error('register failed'));

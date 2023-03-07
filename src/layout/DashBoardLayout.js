@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { BiMenu } from 'react-icons/bi';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
+import useAdmin from '../hooks/useAdmin';
 import useBuyer from '../hooks/useBuyer';
 import useSeller from '../hooks/useSeller';
 import Navbar from '../pages/share/Navbar/Navbar';
@@ -11,8 +12,9 @@ const DashBoardLayout = () => {
     const { user } = useContext(AuthContext);
     const [isSeller] = useSeller(user?.email);
     const [isBuyer] = useBuyer(user?.email);
-    console.log(isBuyer);
-    // const [isAdmin] = useAdmin(user?.email);
+    const [isAdmin] = useAdmin(user?.email);
+
+    // console.log(isSeller, isBuyer, isAdmin);
 
     return (
         <div>
@@ -44,13 +46,13 @@ const DashBoardLayout = () => {
                             <li><Link to="/dashboard/buyerOders">My Orders</Link></li>
                         }
 
-                        {/* {
-                            isAdmin && <> 
-                        <li><Link to="/dashboard/allbuyers">All Buyers</Link></li>
-                        <li><Link to="/dashboard/allsellers">All Sellers</Link></li>
-                        <li><Link to="/dashboard/reportedItems">Reported Items</Link></li>
-                         </> 
-                        }  */}
+                        {
+                            isAdmin && <>
+                                <li><Link to="/dashboard/allBuyers">All Buyers</Link></li>
+                                <li><Link to="/dashboard/allSellers">All Sellers</Link></li>
+                                <li><Link to="/dashboard/reportedItems">Reported Items</Link></li>
+                            </>
+                        }
 
                     </ul>
 

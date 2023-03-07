@@ -17,11 +17,10 @@ const BuyerOrder = () => {
         }
     });
 
-    console.log(products);
-
     const handleDelete = (id) => {
 
     };
+
     return (
         <div>
             {

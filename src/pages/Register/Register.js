@@ -18,7 +18,7 @@ const Register = () => {
     // console.log(image);
 
     const handleSignUp = (data) => {
-        console.log(data);
+        // console.log(data);
         const { name, email, files, password, role } = data;
         console.log(name, email, files, password, role);
 
@@ -32,7 +32,6 @@ const Register = () => {
                 updateUser(userInfo)
                     .then(result => {
                         saveUser(name, email, role);
-                        console.log(name, email, role);
                     }).catch(err => console.log(err));
                 navigate('/');
             }).catch(err => toast.error('register failed'));
@@ -79,26 +78,26 @@ const Register = () => {
                 <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
                     <form onSubmit={handleSubmit(handleSignUp)}>
 
-                        <div class=" flex items-center mb-4">
-                            <div class="title py-3 my-auto px-5 bg-blue-500 text-white text-sm font-semibold mr-3 rounded">Role</div>
+                        <div className=" flex items-center mb-4">
+                            <div className="title py-3 my-auto px-5 bg-blue-500 text-white text-sm font-semibold mr-3 rounded">Role</div>
                             <div className=''>
-                                <label class="flex  p-2 cursor-pointer">
+                                <label className="flex  p-2 cursor-pointer">
                                     <input
                                         {...register("role", {
                                             required: "role is Required"
                                         })}
-                                        class="my-auto transform scale-125" type="radio" name="role" value='seller' />
-                                    <div class="title px-2">seller</div>
+                                        className="my-auto transform scale-125" type="radio" name="role" value='seller' />
+                                    <div className="title px-2">seller</div>
                                 </label>
                             </div>
 
-                            <div> <label class="flex  p-2 cursor-pointer">
+                            <div> <label className="flex  p-2 cursor-pointer">
                                 <input
                                     {...register("role", {
                                         required: "role is Required"
                                     })}
-                                    class="my-auto transform scale-125" type="radio" name="role" checked value='buyer' />
-                                <div class="title px-2 ">buyer</div>
+                                    className="my-auto transform scale-125" type="radio" name="role" checked value='buyer' />
+                                <div className="title px-2 ">buyer</div>
                             </label></div>
 
 

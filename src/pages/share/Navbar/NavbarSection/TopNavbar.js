@@ -34,8 +34,8 @@ const TopNavbar = () => {
 
                 <div className='flex   items-center flex-col md:flex-row gap-10'>
                     {
-                        data.map(d => {
-                            return <div className='flex  items-center gap-3'>
+                        data.map((d, ind) => {
+                            return <div key={ind} className='flex  items-center gap-3'>
                                 <span className='text-lg p-4  rounded-full shadow-lg text-secondary'>{d.icon}</span>
                                 <div>
                                     <p className='font-bold'>{d.headingText}</p>
