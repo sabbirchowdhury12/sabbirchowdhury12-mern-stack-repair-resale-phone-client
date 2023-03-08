@@ -3,6 +3,10 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { orderRoute } from '../../../utilities/APIRoutes';
 import { RiDeleteBinLine } from "react-icons/ri";
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+
 
 const BuyerOrder = () => {
 
@@ -17,8 +21,14 @@ const BuyerOrder = () => {
         }
     });
 
-    const handleDelete = (id) => {
+    const handleDelete = async (id) => {
+        await axios.delete(`${orderRoute}/${id}`).then(res => {
+            if (res.data.acknowledged === true) {
+                toast.success('add success');
+                refetch();
+            } else { toast.error('failed'); }
 
+        }).catch(err => console.log(err));
     };
 
     return (
@@ -93,7 +103,7 @@ const BuyerOrder = () => {
                                                             className="bg-secondary text-white font-bold p-2 rounded hover:text-gray-600"
 
                                                         >
-                                                            {product.status ? 'paid' : 'pay now'}
+                                                            {product.status ? 'paid' : <Link to={`/dashboard/payment/${product._id}`}> pay now </Link>}
                                                         </button>
                                                     </td>
                                                     <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">

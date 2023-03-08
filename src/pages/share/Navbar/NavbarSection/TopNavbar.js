@@ -10,13 +10,13 @@ const data = [
     },
     {
         icon: <AiFillClockCircle />,
-        headingText: '101, Dhaka Street',
-        text: 'Dhaka, Bangladesh'
+        headingText: 'Opening Time',
+        text: '9am - 10pm'
     },
     {
         icon: <AiOutlineMail />,
-        headingText: '101, Dhaka Street',
-        text: 'Dhaka, Bangladesh'
+        headingText: 'Mail Us',
+        text: 'xyz@gmail.com'
     },
 ];
 
@@ -39,7 +39,7 @@ const TopNavbar = () => {
                                 <span className='text-lg p-4  rounded-full shadow-lg text-secondary'>{d.icon}</span>
                                 <div>
                                     <p className='font-bold'>{d.headingText}</p>
-                                    <p className='italic'>{d.text}</p>
+                                    <p className=''>{d.text}</p>
                                 </div>
                             </div>;
                         })

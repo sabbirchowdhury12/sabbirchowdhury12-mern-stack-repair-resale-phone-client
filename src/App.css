@@ -26,3 +26,11 @@
 .text-secondary {
   color: #3BAED4;
 }
+
+.bg-light {
+  background-color: #F2F2F2;
+}
+
+.text-light {
+  color: #999999;
+}

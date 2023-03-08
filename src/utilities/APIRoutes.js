@@ -6,4 +6,5 @@ export const userSellerRoute = `${host}/users/seller`;
 export const userBuyerRoute = `${host}/users/buyer`;
 export const userAdminRoute = `${host}/users/admin`;
 export const orderRoute = `${host}/orders`;
+export const bookingRoute = `${host}/booking`;
 export const productRoute = `${host}/product`;

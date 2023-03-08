@@ -5,12 +5,13 @@ import AddProduct from '../pages/DashBoard/AddProduct/AddProduct';
 import AllBuyer from '../pages/DashBoard/AllBuyer/AllBuyer';
 import AllSeller from '../pages/DashBoard/AllSeller/AllSeller';
 import BuyerOrder from '../pages/DashBoard/BuyerOrder/BuyerOrder';
+import Payment from '../pages/DashBoard/Payment/Payment';
 import SellerProducts from '../pages/DashBoard/SellerProduct/SellerProducts';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login/Login';
 import Products from '../pages/Products/Products';
 import Register from '../pages/Register/Register';
-import { allProducts } from '../utilities/APIRoutes';
+import { allProducts, bookingRoute } from '../utilities/APIRoutes';
 import AdminRoute from './AdminRoute';
 import BuyerRoute from './BuyerRoute';
 import PrivateRoute from './PrivateRoute';
@@ -62,6 +63,11 @@ export const router = createBrowserRouter([
                 element: <BuyerRoute><BuyerOrder /></BuyerRoute>
             },
             {
+                path: '/dashboard/payment/:id',
+                element: <BuyerRoute><Payment /></BuyerRoute>,
+                loader: ({ params }) => fetch(`${bookingRoute}/${params.id}`)
+            },
+            {
                 path: '/dashboard/allBuyers',
                 element: <AdminRoute><AllBuyer /></AdminRoute>
             },
@@ -69,6 +75,7 @@ export const router = createBrowserRouter([
                 path: '/dashboard/allSellers',
                 element: <AdminRoute><AllSeller /></AdminRoute>
             },
+
         ]
     }
 ]);
