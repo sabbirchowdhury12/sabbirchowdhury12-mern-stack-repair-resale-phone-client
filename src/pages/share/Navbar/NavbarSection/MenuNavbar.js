@@ -9,7 +9,7 @@ import { CgProfile } from 'react-icons/cg';
 const menu = [
     {
         name: 'Home',
-        link: '/home'
+        link: '/'
     },
 
     {
@@ -18,11 +18,11 @@ const menu = [
     },
     {
         name: 'Blog',
-        link: '/home'
+        link: '/blog'
     },
     {
         name: 'Contact',
-        link: '/home'
+        link: '/contact'
     },
     // {
     //     name: 'Home',
@@ -95,7 +95,7 @@ const MenuNavbar = () => {
                                     return (
                                         <NavLink key={ind} className={({ isActive }) =>
                                             isActive ? "navStyle" : "navTextStyle"
-                                        } to={m.path}
+                                        } to={m.link}
 
                                         ><span className='block mt-5 md:mt-0'>{m.name}</span></NavLink>
                                     );

@@ -1,12 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom';
 import DashBoardLayout from '../layout/DashBoardLayout';
 import Main from '../layout/Main';
+import Blog from '../pages/Blog/Blog';
+import Contact from '../pages/Contact/Contact';
 import AddProduct from '../pages/DashBoard/AddProduct/AddProduct';
 import AllBuyer from '../pages/DashBoard/AllBuyer/AllBuyer';
 import AllSeller from '../pages/DashBoard/AllSeller/AllSeller';
 import BuyerOrder from '../pages/DashBoard/BuyerOrder/BuyerOrder';
 import Payment from '../pages/DashBoard/Payment/Payment';
 import SellerProducts from '../pages/DashBoard/SellerProduct/SellerProducts';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login/Login';
 import Products from '../pages/Products/Products';
@@ -22,6 +25,7 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
@@ -38,6 +42,14 @@ export const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
+            },
+            {
+                path: "/blog",
+                element: <Blog />
             },
             {
                 path: "/allProducts",

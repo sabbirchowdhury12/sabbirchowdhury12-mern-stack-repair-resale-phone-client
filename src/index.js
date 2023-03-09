@@ -9,6 +9,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import { ThemeProvider } from '@material-tailwind/react';
 
 
 // Create a client
@@ -19,7 +20,10 @@ root.render(
   <AuthProvider>
     <QueryClientProvider client={queryClient}>
       <React.StrictMode>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+
       </React.StrictMode>
     </QueryClientProvider>
 

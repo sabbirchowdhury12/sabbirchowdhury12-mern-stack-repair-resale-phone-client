@@ -6,12 +6,12 @@ const CategoryProduct = ({ product, setProduct }) => {
     // setCategoryID(category.category_id
     // );
 
-    const { modelName, number, originalPrice, puchesYear, location, desc, resalePrice, sellerName, uses } = product;
+    const { modelName, number, img, originalPrice, puchesYear, location, desc, resalePrice, sellerName, uses } = product;
     return (
 
         <div className="  bg-white border border-gray-200 rounded-lg shadow ">
             <div className='h-72' >
-                <img className="p-4 rounded-t-lg h-full w-full" height={30} src={product.img} alt='' />
+                <img className="p-2  rounded-lg h-full w-full" height={30} src={img} alt='' />
             </div>
             <div className="px-5 pb-5">
                 <div href="#">
