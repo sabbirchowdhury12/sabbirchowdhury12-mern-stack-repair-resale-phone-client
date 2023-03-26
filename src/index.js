@@ -10,6 +10,7 @@ import {
 } from '@tanstack/react-query';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import { ThemeProvider } from '@material-tailwind/react';
+import { Toaster } from 'react-hot-toast';
 
 
 // Create a client
@@ -22,6 +23,10 @@ root.render(
       <React.StrictMode>
         <ThemeProvider>
           <App />
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+          />
         </ThemeProvider>
 
       </React.StrictMode>

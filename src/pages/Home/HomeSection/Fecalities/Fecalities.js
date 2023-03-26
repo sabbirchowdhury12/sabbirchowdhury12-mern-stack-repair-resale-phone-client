@@ -30,8 +30,8 @@ const Fecalities = () => {
         <div className='bg-light'>
             <div className='py-10  mx-auto container grid grid-cols-1 md:grid-col-2 lg:grid-cols-4 gap-10'>
                 {
-                    data.map(d => {
-                        return <div className='text-light flex items-center justify-between border-b pb-4 md:border-r px-4'>
+                    data.map((d, ind) => {
+                        return <div key={ind} className='text-light flex items-center justify-between border-b pb-4 md:border-r px-4'>
                             <div>
                                 <p className='uppercase font-bold text-lg'>{d.headingText}</p>
                                 <p>{d.desc}</p>

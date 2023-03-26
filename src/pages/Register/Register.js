@@ -3,9 +3,9 @@ import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { userRoute } from '../../utilities/APIRoutes';
+import { jwt, userRoute } from '../../utilities/APIRoutes';
 
 const Register = () => {
 
@@ -13,18 +13,16 @@ const Register = () => {
 
     const { createUserWithEmail, updateUser } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     // const [file, setFile] = useState(null);
     // const image = useImage(file);
     // console.log(image);
 
     const handleSignUp = (data) => {
-        // console.log(data);
-        const { name, email, files, password, role } = data;
-        console.log(name, email, files, password, role);
-
+        const { name, email, password, role } = data;
         createUserWithEmail(email, password)
             .then(result => {
-                // console.log(image);
                 const userInfo = {
                     displayName: name,
                 };
@@ -32,11 +30,9 @@ const Register = () => {
                 updateUser(userInfo)
                     .then(result => {
                         saveUser(name, email, role);
+
                     }).catch(err => console.log(err));
-                navigate('/');
             }).catch(err => toast.error('register failed'));
-
-
         // const img = files[0];
         // const formData = new FormData();
         // formData.append('image', img);
@@ -55,14 +51,29 @@ const Register = () => {
 
     const saveUser = async (name, email, role) => {
         const user = { name, email, role };
-
         await axios.post(userRoute, {
             user
         }).then(res => {
             if (res.data.acknowledged === true) {
                 toast.success('register done');
+                handleJWT(email);
             }
         }).catch(err => console.log(err));
+    };
+
+
+    const handleJWT = async (email) => {
+
+        await axios.post(jwt, {
+            email
+        }).then((result) => {
+            localStorage.setItem('User-Token', result.data.token);
+            // navigate(from, { replace: true });
+            navigate('/');
+        })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 
     return (

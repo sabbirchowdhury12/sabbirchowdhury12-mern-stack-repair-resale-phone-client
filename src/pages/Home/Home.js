@@ -4,6 +4,7 @@ import CategoryProducts from '../CategorySection/CategoryProducts';
 import About from './HomeSection/About/About';
 import Countup from './HomeSection/Countup/Countup';
 import Fecalities from './HomeSection/Fecalities/Fecalities';
+import SellerSection from './HomeSection/SellerSection/SellerSection';
 import Testomonial from './HomeSection/Testomonial/Testomonial';
 
 
@@ -15,9 +16,8 @@ const Home = () => {
             <CategoryProducts />
             <Testomonial />
             <About />
+            {/* <SellerSection /> */}
             <Countup />
-
-
         </div>
     );
 };

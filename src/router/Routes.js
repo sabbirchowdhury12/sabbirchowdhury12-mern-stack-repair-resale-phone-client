@@ -31,10 +31,7 @@ export const router = createBrowserRouter([
                 path: "/",
                 element: <Home />
             },
-            {
-                path: "",
-                element: <Home />
-            },
+
             {
                 path: "/login",
                 element: <Login />
@@ -63,7 +60,7 @@ export const router = createBrowserRouter([
         element: <DashBoardLayout />,
         children: [
             {
-                path: '/dashboard/addproduct',
+                path: '/dashboard/allproducts',
                 element: <SellerRoute><AddProduct /></SellerRoute>
             },
             {
@@ -77,7 +74,11 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <BuyerRoute><Payment /></BuyerRoute>,
-                loader: ({ params }) => fetch(`${bookingRoute}/${params.id}`)
+                loader: ({ params }) => fetch(`${bookingRoute}/${params.id}`, {
+                    headers: {
+                        authorization: `bearer ${localStorage.getItem('User-Token')}`
+                    }
+                })
             },
             {
                 path: '/dashboard/allBuyers',

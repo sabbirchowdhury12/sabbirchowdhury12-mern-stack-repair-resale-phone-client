@@ -34,10 +34,7 @@ const Blog = () => {
                                 >
                                     Any Questions? Look Here
                                 </h2>
-                                <p class="text-base text-body-color">
-                                    There are many variations of passages of Lorem Ipsum available but
-                                    the majority have suffered alteration in some form.
-                                </p>
+
                             </div>
                         </div>
                     </div>
@@ -68,16 +65,13 @@ const Blog = () => {
                                     </div>
                                     <div class="w-full">
                                         <h4 class="text-lg font-semibold text-black">
-                                            How long we deliver your first blog post?
+                                            What is closure in javascript?
                                         </h4>
                                     </div>
                                 </button>
                                 <div x-show="openFaq1" class="faq-content pl-[62px]">
                                     <p class="py-3 text-base leading-relaxed text-body-color">
-                                        It takes 2-3 weeks to get your first blog post ready. That
-                                        includes the in-depth research & creation of your monthly content
-                                        marketing strategy that we do before writing your first blog post,
-                                        Ipsum available .
+                                        A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.
                                     </p>
                                 </div>
 
@@ -107,16 +101,13 @@ const Blog = () => {
                                     </div>
                                     <div class="w-full">
                                         <h4 class="text-lg font-semibold text-black">
-                                            How long we deliver your first blog post?
+                                            What is closure in javascript?
                                         </h4>
                                     </div>
                                 </button>
                                 <div x-show="openFaq2" class="faq-content pl-[62px]">
                                     <p class="py-3 text-base leading-relaxed text-body-color">
-                                        It takes 2-3 weeks to get your first blog post ready. That
-                                        includes the in-depth research & creation of your monthly content
-                                        marketing strategy that we do before writing your first blog post,
-                                        Ipsum available .
+                                        A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.
                                     </p>
                                 </div>
                             </div>
@@ -145,16 +136,13 @@ const Blog = () => {
                                     </div>
                                     <div class="w-full">
                                         <h4 class="text-lg font-semibold text-black">
-                                            How long we deliver your first blog post?
+                                            What is closure in javascript?
                                         </h4>
                                     </div>
                                 </button>
                                 <div x-show="openFaq3" class="faq-content pl-[62px]">
                                     <p class="py-3 text-base leading-relaxed text-body-color">
-                                        It takes 2-3 weeks to get your first blog post ready. That
-                                        includes the in-depth research & creation of your monthly content
-                                        marketing strategy that we do before writing your first blog post,
-                                        Ipsum available .
+                                        A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.
                                     </p>
                                 </div>
                             </div>
@@ -185,16 +173,13 @@ const Blog = () => {
                                     </div>
                                     <div class="w-full">
                                         <h4 class="text-lg font-semibold text-black">
-                                            How long we deliver your first blog post?
+                                            What is closure in javascript?
                                         </h4>
                                     </div>
                                 </button>
                                 <div x-show="openFaq4" class="faq-content pl-[62px]">
                                     <p class="py-3 text-base leading-relaxed text-body-color">
-                                        It takes 2-3 weeks to get your first blog post ready. That
-                                        includes the in-depth research & creation of your monthly content
-                                        marketing strategy that we do before writing your first blog post,
-                                        Ipsum available .
+                                        A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.
                                     </p>
                                 </div>
                             </div>
@@ -223,16 +208,13 @@ const Blog = () => {
                                     </div>
                                     <div class="w-full">
                                         <h4 class="text-lg font-semibold text-black">
-                                            How long we deliver your first blog post?
+                                            What is closure in javascript?
                                         </h4>
                                     </div>
                                 </button>
                                 <div x-show="openFaq5" class="faq-content pl-[62px]">
                                     <p class="py-3 text-base leading-relaxed text-body-color">
-                                        It takes 2-3 weeks to get your first blog post ready. That
-                                        includes the in-depth research & creation of your monthly content
-                                        marketing strategy that we do before writing your first blog post,
-                                        Ipsum available .
+                                        A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.
                                     </p>
                                 </div>
                             </div>
@@ -261,16 +243,13 @@ const Blog = () => {
                                     </div>
                                     <div class="w-full">
                                         <h4 class="text-lg font-semibold text-black">
-                                            How long we deliver your first blog post?
+                                            What is closure in javascript?
                                         </h4>
                                     </div>
                                 </button>
                                 <div x-show="openFaq6" class="faq-content pl-[62px]">
                                     <p class="py-3 text-base leading-relaxed text-body-color">
-                                        It takes 2-3 weeks to get your first blog post ready. That
-                                        includes the in-depth research & creation of your monthly content
-                                        marketing strategy that we do before writing your first blog post,
-                                        Ipsum available .
+                                        A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.
                                     </p>
                                 </div>
                             </div>

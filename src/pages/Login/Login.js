@@ -1,8 +1,10 @@
+import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { jwt } from '../../utilities/APIRoutes';
 
 const Login = () => {
 
@@ -18,10 +20,27 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 // console.log(user);
-                toast.error('login succed');
+                toast.success('login succed');
+                handleJWT(email);
                 navigate('/');
             }).catch(err => toast.error('register failed'));
     };
+
+
+    const handleJWT = async (email) => {
+
+        await axios.post(jwt, {
+            email
+        }).then((result) => {
+            localStorage.setItem('User-Token', result.data.token);
+            // navigate(from, { replace: true });
+            navigate('/');
+        })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
 
     return (
         <div>

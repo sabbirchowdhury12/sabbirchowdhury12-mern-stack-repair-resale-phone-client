@@ -15,7 +15,11 @@ const BuyerOrder = () => {
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products', user?.email],
         queryFn: async () => {
-            const res = await fetch(`${orderRoute}?email=${user?.email}`);
+            const res = await fetch(`${orderRoute}?email=${user?.email}`, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('User-Token')}`
+                }
+            });
             const data = await res.json();
             return data;
         }
@@ -85,7 +89,7 @@ const BuyerOrder = () => {
                                         <tbody className="divide-y divide-gray-200">
 
                                             {
-                                                products.map((product, i) => <tr>
+                                                products.map((product, i) => <tr key={i}>
                                                     <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
                                                         {i + 1}
                                                     </td>

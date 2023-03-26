@@ -1,4 +1,5 @@
 const host = 'http://localhost:5000';
+export const jwt = `${host}/jwt`;
 export const payment = `${host}/create-payment-intent`;
 export const payments = `${host}/payments`;
 export const categoryProduct = `${host}/categoryProducts`;

@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { CgProfile } from 'react-icons/cg';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -37,6 +38,7 @@ const MenuNavbar = () => {
     const handleLogout = () => {
         logout();
     };
+
 
     return (
         <nav className="w-full bg-primary sm:mt-5 flex items-center justify-center text-white shadow">

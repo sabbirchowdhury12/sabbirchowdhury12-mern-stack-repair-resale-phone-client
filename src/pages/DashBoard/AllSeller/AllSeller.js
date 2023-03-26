@@ -67,7 +67,7 @@ const AllSeller = () => {
                                                 users?.map((user, i) => {
                                                     const { name, email, img, _id } = user;
                                                     return (
-                                                        <tr>
+                                                        <tr key={_id}>
                                                             <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
                                                                 {i + 1}
                                                             </td>
