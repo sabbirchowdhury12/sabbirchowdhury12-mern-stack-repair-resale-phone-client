@@ -27,7 +27,7 @@ const Contact = () => {
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
+              focus:text-gray-700 focus:bg-white focus:outline-none" id="exampleInput7"
                                     placeholder="Name" />
                             </div>
                             <div class="form-group mb-6">
@@ -44,7 +44,7 @@ const Contact = () => {
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
+              focus:text-gray-700 focus:bg-white focus:outline-none" id="exampleInput8"
                                     placeholder="Email address" />
                             </div>
                             <div class="form-group mb-6">
@@ -63,14 +63,14 @@ const Contact = () => {
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+              focus:text-gray-700 focus:bg-white focus:outline-none
             " id="exampleFormControlTextarea13" rows="3" placeholder="Message"></textarea>
                             </div>
                             <button type="submit" class="
             w-full
             px-6
             py-2.5
-            bg-blue-600
+            bg-primary
             text-white
             font-medium
             text-xs
@@ -91,7 +91,7 @@ const Contact = () => {
                             <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
                                 <div class="flex items-start">
                                     <div class="shrink-0">
-                                        <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                                        <div class="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="headset" class="w-5 text-white"
                                                 role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                 <path fill="currentColor"
@@ -110,7 +110,7 @@ const Contact = () => {
                             <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
                                 <div class="flex items-start">
                                     <div class="shrink-0">
-                                        <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                                        <div class="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="dollar-sign"
                                                 class="w-3 text-white" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 512">
                                                 <path fill="currentColor"
@@ -129,7 +129,7 @@ const Contact = () => {
                             <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
                                 <div class="flex align-start">
                                     <div class="shrink-0">
-                                        <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                                        <div class="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="newspaper"
                                                 class="w-5 text-white" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                                                 <path fill="currentColor"
@@ -148,7 +148,7 @@ const Contact = () => {
                             <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
                                 <div class="flex align-start">
                                     <div class="shrink-0">
-                                        <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                                        <div class="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bug" class="w-5 text-white"
                                                 role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                 <path fill="currentColor"

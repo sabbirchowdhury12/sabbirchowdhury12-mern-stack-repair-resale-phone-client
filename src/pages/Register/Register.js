@@ -82,7 +82,7 @@ const Register = () => {
                 <div>
                     <a href="/">
                         <h3 className="text-4xl font-bold text-secondary">
-                            Create a Account
+                            Create an Account
                         </h3>
                     </a>
                 </div>
@@ -187,14 +187,8 @@ const Register = () => {
                                 />
                             </div>
                         </div> */}
-                        <a
-                            href="#"
-                            className="text-xs text-purple-600 hover:underline"
-                        >
-                            Forget Password?
-                        </a>
                         <div className="flex items-center mt-4">
-                            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+                            <button className="w-full px-4 py-2 text-white transform font-bold rounded-md focus:outline-none focus:bg-hove-primary bg-primary">
                                 Register
                             </button>
                         </div>
@@ -202,7 +196,7 @@ const Register = () => {
                     <div className="mt-4 text-grey-600">
                         Already have an account?{" "}
                         <span>
-                            <Link to='/login' className="text-purple-600 hover:underline" href="#">
+                            <Link to='/login' className="text-secondary hover:underline" href="#">
                                 Log in
                             </Link>
                         </span>

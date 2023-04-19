@@ -125,7 +125,7 @@ const MenuNavbar = () => {
                                 <button onClick={handleLogout} className='hover:text-slate-400'>Log Out</button>
                                 <CgProfile size={30} />
                             </>
-                            : <><Link to='/register'> <button className='hover:text-slate-400'>Login or Sign Up</button></Link>
+                            : <><Link to='/login'> <button className='hover:text-slate-400'>Login or Sign Up</button></Link>
 
                                 <CgProfile size={30} /> </>
                     }

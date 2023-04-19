@@ -19,20 +19,6 @@ const SingleSwiper = ({ slide }) => {
                     </div>
                 </div>
             </div>
-            {/* <div>
-
-
-                <div
-                    className='hero h-[45vh] w-[50vw]'
-                    style={{ backgroundImage: `url(${slide.img})`, }}
-                >
-                </div>
-                <div
-                    className='hero h-[45vh] w-[50vw]'
-                    style={{ backgroundImage: `url(${slide.img})`, }}
-                >
-                </div>
-            </div> */}
         </div>
     );
 };

@@ -19,6 +19,7 @@ import AdminRoute from './AdminRoute';
 import BuyerRoute from './BuyerRoute';
 import PrivateRoute from './PrivateRoute';
 import SellerRoute from './SellerRoute';
+import ResetPassword from '../pages/ResetPassword/ResetPassword';
 
 
 export const router = createBrowserRouter([
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
                 path: "/allProducts",
                 loader: () => fetch(allProducts),
                 element: <PrivateRoute><Products /></PrivateRoute>
+            },
+            {
+                path: "/resetPassword",
+                element: <ResetPassword />
             }
         ]
     },

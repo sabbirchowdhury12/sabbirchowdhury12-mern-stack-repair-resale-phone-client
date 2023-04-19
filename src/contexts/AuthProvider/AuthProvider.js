@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { createContext } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { app } from '../../firebase/firebase.init';
 
 export const AuthContext = createContext();
@@ -53,6 +53,11 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     };
 
+    //send a password reset email
+    const sendEmail = (email) => {
+        return sendPasswordResetEmail(auth, email);
+    };
+
 
     const authInfo = {
         createUserWithEmail,
@@ -61,7 +66,8 @@ const AuthProvider = ({ children }) => {
         user,
         signWithGoogle,
         logout,
-        loading
+        loading,
+        sendEmail
     };
 
 

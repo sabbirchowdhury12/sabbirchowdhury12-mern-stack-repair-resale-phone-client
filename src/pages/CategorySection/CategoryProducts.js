@@ -12,6 +12,7 @@ const CategoryProducts = () => {
 
 
     const [categoryData, setCategoryData] = useState([]);
+    const [selectedCategory, setSeletedCategory] = useState(0);
     const [categoryID, setCategoryID] = useState('');
 
 
@@ -55,8 +56,10 @@ const CategoryProducts = () => {
                         {
                             categories.map((category, ind) => {
                                 return <div className='border-b lg:mb-10 pb-5 lg:pb-2 mb-4' key={ind} onClick={() => handleCategory(category.category_id)}>
-                                    <button className='font-bold text-lg text-secondary'>
-                                        {category.category_name}
+                                    <button onClick={() => setSeletedCategory(ind)} className='font-bold text-lg text-secondary'>
+                                        <NavLink
+                                            className={`${selectedCategory === ind ? 'text-primary' : undefined}`}
+                                        >{category.category_name}</NavLink>
                                     </button>
                                 </div  >;
                             })

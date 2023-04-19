@@ -1,4 +1,4 @@
-const host = 'http://localhost:5000';
+const host = ' https://server-seven-mu.vercel.app';
 export const jwt = `${host}/jwt`;
 export const payment = `${host}/create-payment-intent`;
 export const payments = `${host}/payments`;

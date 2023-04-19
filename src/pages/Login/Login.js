@@ -92,14 +92,14 @@ const Login = () => {
                             </div>
                         </div>
 
-                        <a
+                        <Link to='/resetPassword'
                             href="#"
-                            className="text-xs text-purple-600 hover:underline"
+                            className="text-xs  text-secondary hover:underline"
                         >
                             Forget Password?
-                        </a>
+                        </Link >
                         <div className="flex items-center mt-4">
-                            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+                            <button className="w-full px-4 py-2 text-white   rounded-md bg-primary focus:outline-none  font-bold">
                                 LOGIN
                             </button>
                         </div>
@@ -107,7 +107,7 @@ const Login = () => {
                     <div className="mt-4 text-grey-600">
                         Dont't have any account?{" "}
                         <span>
-                            <Link to='/register' className="text-purple-600 hover:underline" href="#">
+                            <Link to='/register' className="text-secondary hover:underline" href="#">
                                 Sign up
                             </Link>
                         </span>
